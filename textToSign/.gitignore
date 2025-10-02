@@ -47,15 +47,3 @@ venv/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
-
-# ============================
-# Custom Folders (Optional)
-# ============================
-video/           # your training dataset (if local)
-*.mp4
-*.avi
-*.mov
-*.mkv
-*.zip
-*.tar
-*.gz
