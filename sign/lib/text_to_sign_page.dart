@@ -86,7 +86,7 @@ class _TextToSignPageState extends State<TextToSignPage> {
     try {
       var response = await http.post(
         Uri.parse(
-            'https://swaggeringly-superimproved-laney.ngrok-free.dev/generate_video'),
+            'https://alberto-unlocal-clerkly.ngrok-free.dev/generate_video'),
         headers: {"Content-Type": "application/json"},
         body: jsonEncode({"text": text}),
       );

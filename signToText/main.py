@@ -42,17 +42,12 @@ async def lifespan(app: FastAPI):
         return LSTM(*args, **kwargs)
 
     custom_objects = {'LSTM': custom_lstm}
-    model = load_model('cropped_50.keras', custom_objects=custom_objects)
+    model = load_model('cropped_POC.keras', custom_objects=custom_objects)
     logger.info("LSTM model loaded successfully")
 
     # Setup Label Encoder
     label_encoder = LabelEncoder()
-    label_encoder.fit([
-        'Minute', 'Morning', 'cheap', 'Month', 'flat', 'Blind', 'Monday', 'Week', 'happy', 'he', 'tight', 'Nice', 'loose',
-        'Mean', 'sad', 'Today', 'loud', 'she', 'Tomorrow', 'Friday', 'expensive', 'Ugly', 'it', 'Second', 'curved', 'I', 'we',
-        'poor', 'thick', 'Yesterday', 'you (plural)', 'quiet', 'Time', 'Tuesday', 'Sunday', 'Deaf', 'they', 'Hour', 'Year',
-        'thin', 'rich', 'Beautiful', 'Thursday', 'male', 'Saturday', 'you', 'Afternoon', 'Night', 'Wednesday', 'Evening', 'female'
-    ])
+    label_encoder.fit(['Morning', 'Blind', 'happy', 'he', 'she', 'it', 'I', 'Deaf', 'combined', 'Night'])
     logger.info("Label encoder initialized")
 
     # Setup MediaPipe
